@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form : </h1>
+    <hr>
+    <h5>Please fill the form and click SUBMIT</h5>
+    <form action="#">
+        <label for="picture">Upload your profile picture :</label>
+        <input type="file" id="picture" name="picture" accept="image/*"><br><br>
+
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="gender">Gender :</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br><br>
+
+        <label for="country">Country :</label>
+        <select id="country" name="country">
+            <option value="" selected disabled>Select Country</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+            <option value="canada">Canada</option>
+            <option value="australia">Australia</option>
+            <option value="india">Nepal</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+
+        <label for="Hobbies">Hobbies :</label>
+        <input type="checkbox" id="reading" name="hobbies" value="reading">
+        <label for="reading">Reading</label>
+        <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+        <label for="traveling">Traveling</label>
+        <input type="checkbox" id="coding" name="hobbies" value="coding">
+        <label for="coding">Coding</label><br><br>
+
+        <label for="bio">Bio :</label><br>
+        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Write something about yourself..."></textarea><br><br>
+
+        <button type="submit">SUBMIT</button>
+    </form>
+    <hr>
+    <section>
+        <h3>HTML tags used in this page : </h3>
+        <p>In this registration form, I have used various HTML tags such as headings (h1, h3, h5), paragraphs (p), form elements (form, input, label, select, option, textarea, button), and horizontal rules (hr) to create a structured and user-friendly registration form.</p>
+    </section>
+</body>
+</html>
