@@ -1,0 +1,68 @@
+header,main,footer,section{
+    border: 0.05rem solid black;
+    margin: 5px;
+    padding:10px;
+}
+
+h1 {
+    text-align: center;
+}
+
+nav{
+    border:0.05rem solid red;
+}
+
+ul{
+    list-style : none; /* for removing the dot of the list items */
+    display: flex;
+    flex-flow: row wrap; /* flex-direction, flex-wrap */
+    justify-content: flex-end;
+    align-items: center;
+    border:1px solid green;
+}
+
+nav>ul>li{
+    border:1px solid blue;
+    margin: 2px 5px 2px 5px;
+    border-radius: 2px;
+    text-align:center;
+}
+
+nav ul li:hover a{
+    color:white;
+    background-color: grey;
+}
+
+li a {
+  text-decoration: none;  /* for removing the underline in the link */
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+    /* justify-content: space-between; */
+
+}
+
+main article {
+    flex-basis: 50%;
+}
+
+main article:nth-of-type(2){
+    flex-shrink:0;
+}
+
+.pictureCollection{
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.pictureCollection div{
+    border:1px solid black;
+    padding:5px
+}
+
+
