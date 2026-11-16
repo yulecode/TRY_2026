@@ -1,0 +1,266 @@
+/* =========================================
+   1. VARIABLES & GLOBAL RESET
+   ========================================= */
+:root {
+    --espresso: #2c1e16;
+    --roast: #4a3525;
+    --caramel: #c87d4b;
+    --cream: #faf6f0;
+    --latte: #efe6d8;
+    --white: #ffffff;
+    --text-dark: #2b211a;
+    --text-muted: #6b584c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* =========================================
+   2. HEADER & NAVIGATION (FLEXBOX)
+   ========================================= */
+header {
+    background-color: var(--espresso);
+    color: var(--cream);
+    padding: 1.2rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--caramel);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: var(--cream);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--caramel);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--caramel);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   3. MAIN CONTENT & ARTICLES (FLEXBOX)
+   ========================================= */
+main {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+article {
+    flex: 1; /* Both articles share equal width */
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(44, 30, 22, 0.06);
+    border-top: 4px solid var(--caramel);
+    transition: transform 0.3s ease;
+}
+
+article:hover {
+    transform: translateY(-4px);
+}
+
+h3 {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: var(--espresso);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--latte);
+}
+
+article p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+/* Menu List Styling */
+article ol {
+    list-style-position: inside;
+    margin-top: 0.5rem;
+}
+
+article li {
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--latte);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+article li:last-child {
+    border-bottom: none;
+}
+
+article li strong {
+    color: var(--caramel);
+    font-weight: 700;
+    background-color: var(--cream);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+}
+
+/* =========================================
+   4. POPULAR CHOICES GALLERY (FLEXBOX)
+   ========================================= */
+section {
+    max-width: 1000px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1.5rem;
+}
+
+.pictureCollection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.2rem;
+}
+
+.pictureCollection div {
+    /* 4 items per row accounting for the 3 gaps of 1.5rem */
+    flex: 1 1 calc(25% - 1.5rem);
+    min-width: 180px;
+    background: linear-gradient(135deg, var(--roast), var(--espresso));
+    color: var(--cream);
+    height: 180px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-family: Georgia, serif;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(44, 30, 22, 0.12);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.pictureCollection div:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(44, 30, 22, 0.2);
+    border: 2px solid var(--caramel);
+}
+
+/* =========================================
+   5. FOOTER (FLEXBOX)
+   ========================================= */
+footer {
+    background-color: var(--espresso);
+    color: var(--latte);
+    padding: 3rem 5% 1.5rem 5%;
+    text-align: center;
+}
+
+footer > div {
+    max-width: 1000px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer > div div {
+    flex: 1;
+    min-width: 220px;
+    font-size: 0.95rem;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* =========================================
+   6. RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================= */
+
+/* Tablet View (Below 768px) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column; /* Stack About & Menu vertically with Flexbox */
+        margin: 2rem auto;
+    }
+
+    .pictureCollection div {
+        flex: 1 1 calc(50% - 1.5rem); /* 2 cards per row on tablets */
+    }
+}
+
+/* Mobile Phone View (Below 480px) */
+@media (max-width: 480px) {
+    nav ul {
+        gap: 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .pictureCollection div {
+        flex: 1 1 100%; /* 1 card per row on small phones */
+    }
+
+    footer > div {
+        flex-direction: column;
+        text-align: center;
+    }
+}
